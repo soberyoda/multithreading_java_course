@@ -11,9 +11,13 @@ public class SequentialProcessing {
     public static void main(String... args) throws IOException {
         BufferedImage originalImage = ImageIO.read(new File(SOURCE_FILE));
         BufferedImage resultImage = new BufferedImage(originalImage.getWidth(), originalImage.getHeight(), BufferedImage.TYPE_INT_RGB);
+        long startTime = System.currentTimeMillis();
         recolorSingleThread(originalImage, resultImage);
+        long endTime = System.currentTimeMillis();
+        long duration = endTime - startTime;
         File outputFile = new File(DESTINATION_FILE);
         ImageIO.write(resultImage, "jpg", outputFile);
+        System.out.println(duration);
     }
     public static void recolorSingleThread(BufferedImage originalImage, BufferedImage resultImage){
         recolorImage(originalImage, resultImage, 0, 0 , originalImage.getWidth(), originalImage.getHeight());
