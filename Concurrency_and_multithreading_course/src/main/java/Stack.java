@@ -1,5 +1,5 @@
 public class Stack {
-    private int[] array;
+    private final int[] array;
     private int stackTop;
     public Stack(int capacity){
         array = new int[capacity];

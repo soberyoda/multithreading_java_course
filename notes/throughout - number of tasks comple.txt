@@ -1,0 +1,62 @@
+throughout - number of tasks completed in a given period 
+measured time / time units 
+thread Pooling - creating the theads once and reusing them for future tasks instead of recreating the threads each and every time from scratch 
+implementing a thread poll is not trivial 
+Jdk comes with a few implementations of thread pools 
+fixed thread pool executor 
+
+by serving each task on a different thread, in parallel, we can improve throughput by N 
+using a fixed thread Pool, we maintain constant number of threads and eliminate the need to recreate the threads 
+significcant performance improvement (xN)
+
+
+STACK MEMORY REGION VS HEAP MEMORY REGION 
+
+
+STACK memory region where: 
+- methods are called 
+- arguments are passed
+- local variables are stored 
+stack+ instruction pointer  = state of each thread execution 
+
+all variables belong to  the thread  executing on that stack - other threads have no acces to them 
+
+statically allocated when the thread is created 
+the stack's size is fixed and relatively small (platform specific) and cannot change at runtime
+
+if our calling hierarchy is too deep  We may get an StackOverflow Exception 
+
+HEAP MEMORY REGION - is a shared memory region that belongs to the process all the threads share whatever data is located on the heap and can access allocate objects on 
+the heap at any moment 
+- objects (with new)
+- members of classes 
+static variables - are actually members of the class object associated with that class 
+
+heap memory management - 
+governed and managed by garbage collector 
+objects - stay as long as we have at least one reference to them
+Members of classes - exist as long as their parent objects exist (same life cycle as their parents)
+
+static variables - stay forever - remain untouched throughout the entire application's lifetime
+
+references =/= objects 
+ 
+
+references - can be allocated on the stack 
+can be allocated on the heap if they are members of a class 
+
+objects 
+always allocated on the heap 
+
+all static variables defined on the class level is allocated on the heap which makes it accessible to all threads 
+
+
+atomic operation 
+an operation or a set of operations is considered atomic,if it appears to the rest of the system as if it occurraed at once 
+single step - "all or nothing"
+no intermidiate states
+
+
+synchronized - monitor/ lock
+
+synchronized - locking mechanism, used to restrict access to a critical section or entire method to a single thread at a time 

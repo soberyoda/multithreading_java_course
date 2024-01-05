@@ -1,7 +1,10 @@
 import java.math.BigInteger;
 
 public class ComplexCalculation {
-    public BigInteger calculateResult(BigInteger base1, BigInteger power1, BigInteger base2, BigInteger power2) throws InterruptedException {
+    public static void main(String ... args) throws InterruptedException {
+        System.out.println(calculateResult(BigInteger.valueOf(5), BigInteger.valueOf(5), BigInteger.valueOf(3), BigInteger.valueOf(3)));
+    }
+    public static BigInteger calculateResult(BigInteger base1, BigInteger power1, BigInteger base2, BigInteger power2) throws InterruptedException {
         BigInteger result;
         /*
             Calculate result = ( base1 ^ power1 ) + (base2 ^ power2).
