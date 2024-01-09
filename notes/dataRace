@@ -1,0 +1,18 @@
+Data race - problem
+Compiler and CPU may execute the instructions Out of order to optimize performance and utilization
+
+they will do so while maintaining the logical correctness of the code
+out of order execution by the compiler and CPU are important features to speed up the code
+
+the compiler re-arranges instructions for better
+- branch predication (optimized loops, "if" statements etc)
+- vectorization - parallel instruction execution SIMD
+- Prefetching instructions - better cache performance
+
+CPU re-arranges instructions for better hardware units utilization
+may lead to unexpected, paradoxical and incorrect results
+
+order etc
+establish a Happens - before semantics by one of these methods:
+synchronization of methods which modify shared variables
+declaration of shared variables with the volatile keyword
