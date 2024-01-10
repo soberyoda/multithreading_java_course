@@ -16,3 +16,9 @@ order etc
 establish a Happens - before semantics by one of these methods:
 synchronization of methods which modify shared variables
 declaration of shared variables with the volatile keyword
+
+rule of thumb
+every shared variable  (modified by at least one thread) should be either:
+guaranted by a synchronized block (or any type of lock)
+or
+declared volatile
