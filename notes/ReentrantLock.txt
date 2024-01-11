@@ -1,0 +1,5 @@
+ReentrantLock
+- works just like the synchronized keyword applied on an object
+- requires explicit locking and unlocking
+- control over lock's fairness
+- by default, the ReentrantLock as well as synchronized keyword do NOT guarantee any fairness
