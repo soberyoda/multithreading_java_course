@@ -3,3 +3,14 @@ ReentrantLock
 - requires explicit locking and unlocking
 - control over lock's fairness
 - by default, the ReentrantLock as well as synchronized keyword do NOT guarantee any fairness
+
+TryLock()
+- under no circumstances does the tryLock() method block !
+- Regardless of the state of the lock, it always returns immediately
+ USE CASES
+Real Time applications where suspending a thread on a lock() method is unacceptable
+
+Ex :
+Video/ image processing
+High Speed/ low latency trading systems
+User Interface applications
