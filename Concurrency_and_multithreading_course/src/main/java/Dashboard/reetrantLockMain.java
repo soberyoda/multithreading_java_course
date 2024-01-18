@@ -1,8 +1,4 @@
-package Dashboard;/*
- * Copyright (c) 2018-2023. Michael Pogrebinsky - Top Developer Academy
- * https://topdeveloperacademy.com
- * All rights reserved
- */
+package Dashboard;
 
 import javafx.animation.AnimationTimer;
 import javafx.animation.FillTransition;
@@ -141,7 +137,7 @@ public class reetrantLockMain extends Application {
             Label nameLabel = new Label(cryptoName);
             nameLabel.setTextFill(Color.BLUE);
             nameLabel.setOnMousePressed(event -> nameLabel.setTextFill(Color.RED));
-            nameLabel.setOnMouseReleased((EventHandler) event -> nameLabel.setTextFill(Color.BLUE));
+            nameLabel.setOnMouseReleased((EventHandler<javafx.event.Event>) event -> nameLabel.setTextFill(Color.BLUE));
 
             grid.add(nameLabel, 0, row);
             grid.add(entry.getValue(), 1, row);
@@ -178,8 +174,8 @@ public class reetrantLockMain extends Application {
     }
 
     public static class PriceUpdater extends Thread {
-        private PricesContainer pricesContainer;
-        private Random random = new Random();
+        private final PricesContainer pricesContainer;
+        private final Random random = new Random();
 
         public PriceUpdater(PricesContainer pricesContainer) {
             this.pricesContainer = pricesContainer;
